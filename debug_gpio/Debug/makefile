@@ -51,6 +51,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 debug_gpio.list \
 
+OBJCOPY_HEX += \
+debug_gpio.hex \
+
 
 # All Target
 all: main-build
@@ -74,12 +77,17 @@ debug_gpio.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+debug_gpio.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "debug_gpio.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) debug_gpio.elf debug_gpio.list debug_gpio.map default.size.stdout
+	-$(RM) debug_gpio.elf debug_gpio.hex debug_gpio.list debug_gpio.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
