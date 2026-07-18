@@ -1,0 +1,5 @@
+../Src/gpio.c:11:6:LED_init	4	static
+../Src/gpio.c:22:6:LED_ON	4	static
+../Src/gpio.c:26:6:LED_OFF	4	static
+../Src/gpio.c:30:6:LED_Toggle	4	static
+../Src/gpio.c:34:6:Delay_ms	24	static,ignoring_inline_asm
