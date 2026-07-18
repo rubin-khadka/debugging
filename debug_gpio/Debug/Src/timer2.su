@@ -1,0 +1,2 @@
+../Src/timer2.c:4:6:TIMER2_Init	16	static
+../Src/timer2.c:25:6:TIMER2_Delay_ms	16	static

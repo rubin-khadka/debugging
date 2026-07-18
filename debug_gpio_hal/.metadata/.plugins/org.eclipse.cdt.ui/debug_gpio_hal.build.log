@@ -1,0 +1,19 @@
+21:59:12 **** Incremental Build of configuration Debug for project debug_gpio_hal ****
+make -j20 all 
+arm-none-eabi-gcc -o "debug_gpio_hal.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/rubin/projects/debugging/debug_gpio_hal/debug_gpio_hal/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="debug_gpio_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: debug_gpio_hal.elf
+ 
+arm-none-eabi-size  debug_gpio_hal.elf 
+arm-none-eabi-objdump -h -S debug_gpio_hal.elf  > "debug_gpio_hal.list"
+arm-none-eabi-objcopy  -O ihex debug_gpio_hal.elf  "debug_gpio_hal.hex"
+   text	   data	    bss	    dec	    hex	filename
+   4660	     12	   1572	   6244	   1864	debug_gpio_hal.elf
+Finished building: default.size.stdout
+ 
+Finished building: debug_gpio_hal.hex
+ 
+Finished building: debug_gpio_hal.list
+ 
+
+21:59:12 Build Finished. 0 errors, 0 warnings. (took 117ms)
+

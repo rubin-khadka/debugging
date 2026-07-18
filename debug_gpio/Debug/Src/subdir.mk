@@ -9,21 +9,24 @@ C_SRCS += \
 ../Src/main.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c \
-../Src/system_stm32f1xx.c 
+../Src/system_stm32f1xx.c \
+../Src/timer2.c 
 
 OBJS += \
 ./Src/gpio.o \
 ./Src/main.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o \
-./Src/system_stm32f1xx.o 
+./Src/system_stm32f1xx.o \
+./Src/timer2.o 
 
 C_DEPS += \
 ./Src/gpio.d \
 ./Src/main.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d \
-./Src/system_stm32f1xx.d 
+./Src/system_stm32f1xx.d \
+./Src/timer2.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -33,7 +36,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/gpio.cyclo ./Src/gpio.d ./Src/gpio.o ./Src/gpio.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system_stm32f1xx.cyclo ./Src/system_stm32f1xx.d ./Src/system_stm32f1xx.o ./Src/system_stm32f1xx.su
+	-$(RM) ./Src/gpio.cyclo ./Src/gpio.d ./Src/gpio.o ./Src/gpio.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system_stm32f1xx.cyclo ./Src/system_stm32f1xx.d ./Src/system_stm32f1xx.o ./Src/system_stm32f1xx.su ./Src/timer2.cyclo ./Src/timer2.d ./Src/timer2.o ./Src/timer2.su
 
 .PHONY: clean-Src
 

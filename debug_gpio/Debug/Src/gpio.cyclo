@@ -2,4 +2,3 @@
 ../Src/gpio.c:22:6:LED_ON	1
 ../Src/gpio.c:26:6:LED_OFF	1
 ../Src/gpio.c:30:6:LED_Toggle	1
-../Src/gpio.c:34:6:Delay_ms	2

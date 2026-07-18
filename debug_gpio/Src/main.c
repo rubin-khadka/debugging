@@ -6,6 +6,7 @@
 
 #include "stm32f103xb.h"
 #include "gpio.h"
+#include "timer2.h"
 
 int main(void) {
 	// GPIO PC13 initialization
@@ -13,8 +14,8 @@ int main(void) {
 
 	while (1) {
 		LED_ON();
-		Delay_ms(500);
+		TIMER2_Delay_ms(500);
 		LED_OFF();
-		Delay_ms(500);
+		TIMER2_Delay_ms(500);
 	}
 }
